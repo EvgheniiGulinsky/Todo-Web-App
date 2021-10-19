@@ -23,13 +23,11 @@ const NewTodoForm = ({ onTaskAdd }) =>{
       }
       }
       onKeyDown={(event) => {    
-        const {value} = event.target
-        if(event.key === 'Enter'){
-          onTaskAdd(value)
+        if(event.key === 'Enter' && input){
+          onTaskAdd(input)
           setInput('')
         }
       }}
-      id={styles.form}
     />
   )
 }

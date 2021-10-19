@@ -1,6 +1,5 @@
 import React from 'react'
 import TodoListItem from '../TodoListItem/TodoListItem'
-import NewTodoForm from '../NewTodoForm/NewTodoForm'
 import styles from './TodoList.module.scss'
 
 const TodoList = ({todos, onTaskDelete}) => {
@@ -12,8 +11,6 @@ const TodoList = ({todos, onTaskDelete}) => {
 
     return (
         <div className={styles.list}>
-            <h1 className={styles.heading}>Todo list for today</h1>
-            <NewTodoForm/>
             <ul>
                 {renderTodos()}
             </ul>

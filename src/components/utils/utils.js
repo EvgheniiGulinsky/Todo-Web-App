@@ -16,4 +16,4 @@ const getTodos = () => {
     return [createTodoItem('Example 1'), createTodoItem('Example 2'), createTodoItem('Example 3', true)]
 }
 
-export default getTodos
+export {getTodos, createTodoItem}
