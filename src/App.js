@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
-import './App.css';
 import TodoList from './components/TodoList/TodoList';
 import getTodos from './components/utils/utils';
-
+import './App.css';
 
 function App() {
   const [todos, setsTodos] = useState([])
+
   useEffect(() => {
     const initialTodos = getTodos()
     setsTodos(initialTodos)
@@ -16,6 +16,9 @@ function App() {
     const newTasks = [...todos.slice(0, index), ...todos.slice(index + 1)];
     setsTodos(newTasks)
   };
+
+
+
   return (
     <div className="App">
     <TodoList todos={todos} onTaskDelete={onTaskDelete}/>
