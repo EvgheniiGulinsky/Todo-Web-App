@@ -9,11 +9,16 @@ const createTodoItem = (title, done = false) => {
   }
 
 const getTodos = () => {
-    const todos = localStorage.getItem('todos')
-    if(todos){
-        return todos.split(',')
+    const json = localStorage.getItem('todos')
+    if(json){
+        return JSON.parse(json)
     }
     return [createTodoItem('Example 1'), createTodoItem('Example 2'), createTodoItem('Example 3', true)]
 }
 
-export {getTodos, createTodoItem}
+const storeTodos = (todos) =>{
+    const json = JSON.stringify(todos)
+    localStorage.setItem('todos', json)
+}
+
+export {getTodos, createTodoItem, storeTodos}
